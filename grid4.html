@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="calculatrice" id="calcul">
+        <div class="debut">
+            <div class="maCalculatrice">Calculatrice</div>
+            <div class="symbols">
+                <div class="small" onclick="smallWindow()">-</div>
+                <div class="zoom" onclick="allPage()"><i class="fa fa-square-o" aria-hidden="true"></i></div>
+                <div class="dezoom" onclick="globalPage()" style="display: none;"><i
+                        class="fa-solid fa-window-restore"></i></div>
+                <div class="close" onclick="closeWindow()">×</div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="standard">
+                <div><i class="fa fa-bars" aria-hidden="true"></i></div>
+                <div class="text">Standard</div>
+            </div>
+            <div class="actualise" onclick="refreshPage()">
+                <lord-icon src="https://cdn.lordicon.com/rsbokaso.json" trigger="hover"
+                    style="width:30px;height:30px">
+                </lord-icon></i>
+            </div>
+        </div>
+        <div class="result">
+            <input v-model="expression" @input="updateResult" aria-disabled="true" disabled>
+        </div>
+
+        <div class="M_symbol">
+            <div class="grey_2">MC</div>
+            <div class="grey_2">MR</div>
+            <div>M+</div>
+            <div>M-</div>
+            <div>MS</div>
+            <div class="grey_2">M*</div>
+        </div>
+        <div class="symbols_math">
+            <button @click="appendChar('/100')" class="grey_2">%</button>
+            <button @click="clearInput()" class="grey_2">CE</button>
+            <button class="grey_2">C</button>
+            <button @click="clearChar()" class="grey_2">⌫</button>
+            <button @click="appendChar('**-1')" class="grey_2">1/x</button>
+            <button @click="appendChar('**2')" class="grey_2">x²</button>
+            <button @click="appendChar('**0.5')" class="grey_2">√x</button>
+            <button @click="appendChar('/')" class="grey_2">÷</button>
+            <button @click="appendChar('7')" class="white">7</button>
+            <button @click="appendChar('8')" class="white">8</button>
+            <button @click="appendChar('9')" class="white">9</button>
+            <button @click="appendChar('*')" class="grey_2">×</button>
+            <button @click="appendChar('4')" class="white">4</button>
+            <button @click="appendChar('5')" class="white">5</button>
+            <button @click="appendChar('6')" class="white">6</button>
+            <button @click="appendChar('-')" class="grey_2">-</button>
+            <button @click="appendChar('1')" class="white">1</button>
+            <button @click="appendChar('2')" class="white">2</button>
+            <button @click="appendChar('3')" class="white">3</button>
+            <button @click="appendChar('+')" class="grey_2">+</button>
+            <button class="white">+/-</button>
+            <button @click="appendChar('0')" class="white">0</button>
+            <button @click="appendChar('.')" class="white">,</button>
+            <button @click="calculateResult()" class="blue">=</button>
+        </div>
+    </div>
+    <div class="apparaitre" style="display: none;">
+        <button class="btn btn-primary" onclick="openWindow()">Voir Calculatrice</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

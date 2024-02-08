@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 100vh;
+}
+
+.calculatrice {
+    width: 400px;
+    height: auto;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgb(162, 158, 158);
+}
+
+.result{
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    padding: 40px;
+    
+}
+
+.result input {
+    float: right;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    font-size: 3em;
+    text-align: right;
+    color: black;
+}
+
+.calculatrice .debut{
+    display: flex;
+    flex-direction: row;
+}
+
+.calculatrice .debut .maCalculatrice{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.calculatrice .debut .symbols{
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+}
+
+.calculatrice .debut .symbols div{
+    margin-right: 20px;
+}
+
+.calculatrice .menu{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.calculatrice .menu .standard{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.calculatrice .menu .standard .text{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.calculatrice .menu .standard div{
+    margin-right: 20px;
+}
+
+.calculatrice .menu .actualise{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.M_symbol{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.calculatrice .M_symbol{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+}
+
+.M_symbol::backdrop{
+    opacity: 0,8;
+}
+
+.calculatrice .symbols_math .white{
+    background-color: #fff;
+}
+
+.calculatrice .M_symbol .grey_2{
+    color: rgb(116, 112, 112);
+}
+
+.calculatrice .symbols_math{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6,1fr);
+    text-align: center;
+margin: 1px;
+}
+
+.calculatrice .symbols_math button{
+    padding: 20px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.calculatrice .symbols_math .blue{
+    background: rgb(102, 176, 226);
+}
+
+.calculatrice .symbols_math .grey_2{
+    background: rgb(209, 206, 206);
+}
+
+button:hover {
+    transform: scale(0.95);
+    transition: ease-in;
+}
+
+button:active {
+    transform: scale(1.05);
+}
+
+.close,
+.zoom,
+.dezoom,
+.small,
+.actualise {
+    cursor: pointer;
+}
